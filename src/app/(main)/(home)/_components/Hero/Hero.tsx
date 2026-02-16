@@ -2,6 +2,8 @@ import heroBg from '@/assets/images/HeroBg.avif';
 import GridImage from '@/assets/images/grid.svg';
 import Image from 'next/image';
 import CountdownTimer from './_components/CountdownTimer/CountdownTimer';
+import EnrollmentCTA from './_components/EnrollmentCTA/EnrollmentCTA';
+import { PromptBox } from './_components/PromptBox/PromptBox';
 
 function Hero() {
   return (
@@ -36,51 +38,15 @@ function Hero() {
         <CountdownTimer />
 
         {/* হেডলাইন */}
-        <h1 className="mt-6 max-w-4xl text-center text-[40px] leading-[1.05] font-semibold tracking-[-0.03em] md:text-[68px] lg:text-[56px]">
+        <h1 className="my-4 max-w-4xl text-center font-sans text-[40px] leading-[1.05] font-semibold tracking-[-0.03em] md:text-[68px] lg:text-[56px]">
           Master Prompt Engineering in 6 <br />
           Weeks & <span className="text-[#ff7a00]">Supercharge your career.</span>
         </h1>
 
-        {/* প্রম্পট বক্স */}
-        <div className="mt-12 w-full max-w-150 rounded-2xl border border-white/5 bg-[#0f0f0f]/90 p-5 shadow-2xl backdrop-blur-xl">
-          <div className="flex items-start justify-between">
-            <p className="text-[14px] font-medium text-zinc-500 italic">
-              Draft a LinkedIn message to connect with a job tit
-            </p>
-            <div className="flex items-center gap-4 text-zinc-600">
-              <span className="cursor-pointer transition-colors hover:text-white">🎤</span>
-              <span className="cursor-pointer transition-colors hover:text-white">✨</span>
-            </div>
-          </div>
-          <div className="mt-6 flex items-center gap-4 text-[11px] font-semibold text-zinc-700">
-            <span className="flex cursor-pointer items-center gap-1 transition-colors hover:text-white">
-              <span className="text-lg">+</span> Tools
-            </span>
-          </div>
-        </div>
+        <PromptBox />
 
         {/* CTA */}
-        <div className="mt-10 flex flex-col items-center gap-8 md:flex-row">
-          <button className="flex items-center gap-4 rounded-xl bg-[#ff7a00] px-10 py-4.5 text-lg font-bold text-white shadow-[0_10px_40px_rgba(255,122,0,0.2)] transition-all hover:scale-[1.02] active:scale-95">
-            Enroll now for $499 <span className="text-xl">→</span>
-          </button>
-
-          <div className="flex flex-col items-start">
-            {/* <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <img
-                  key={i}
-                  className="h-10 w-10 rounded-full border-2 border-[#080808] object-cover"
-                  src={`https://i.pravatar.cc/100?u=${i + 25}`}
-                  alt="user"
-                />
-              ))}
-            </div> */}
-            <p className="mt-2 text-[10px] leading-tight font-bold tracking-tight text-zinc-500 uppercase italic">
-              2K+ Professionals are <br /> already ahead of you.
-            </p>
-          </div>
-        </div>
+        <EnrollmentCTA />
 
         <div className="group relative mt-20 aspect-video w-full max-w-4xl cursor-pointer overflow-hidden rounded-md border border-white/10 shadow-2xl transition-all">
           {/* <img

@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 
+// Rolling Number Animation
 const RollingNumber = ({ val }: { val: string | number }) => (
   <div className="relative flex h-4 items-center justify-center overflow-hidden">
     <AnimatePresence mode="popLayout">
@@ -20,8 +21,10 @@ const RollingNumber = ({ val }: { val: string | number }) => (
   </div>
 );
 
+// Main Components
 const CountdownTimer: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
+    // Demo Default Value
     days: 145,
     hours: 14,
     minutes: 21,
@@ -45,19 +48,21 @@ const CountdownTimer: React.FC = () => {
   return (
     <div className="flex items-center justify-center">
       <div className="flex items-center overflow-hidden rounded-xs border border-white/20 bg-white p-px shadow-sm">
+        {/* Left text */}
         <div className="rounded-l-[1px] bg-black px-2.5 py-1">
           <p className="text-xs text-white capitalize">Limited time offer ends in</p>
         </div>
 
+        {/* Right Time Section */}
         <div className="bg-white px-3 py-1">
           <div className="flex items-center gap-2 text-sm leading-none font-bold tracking-tight text-black">
-            <span>{timeLeft.days}</span>
+            <span>{timeLeft?.days}</span>
             <span className="mx-px">:</span>
-            <RollingNumber val={String(timeLeft.hours).padStart(2, '0')} />
+            <RollingNumber val={String(timeLeft?.hours).padStart(2, '0')} />
             <span className="mx-px">:</span>
-            <RollingNumber val={String(timeLeft.minutes).padStart(2, '0')} />
+            <RollingNumber val={String(timeLeft?.minutes).padStart(2, '0')} />
             <span className="mx-px">:</span>
-            <RollingNumber val={String(timeLeft.seconds).padStart(2, '0')} />
+            <RollingNumber val={String(timeLeft?.seconds).padStart(2, '0')} />
           </div>
         </div>
       </div>
